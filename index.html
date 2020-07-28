@@ -75,56 +75,24 @@
 			   "pattern" : "(\<html\>|\<\/html\>|\<head\>|\<\/head\>|\<span\>|\</span\>)" 
 			  , "replaceStr" : ""
 		  }
-		 ,{
-			   "pattern" : "(\<body.*\>|\<meta .*\>|\<style.*\>)" 
+		  ,{
+			   "pattern" : "(src=\").*/image\.gif\""
+			  , "replaceStr" : "$1/image.gif\""
+		  }
+		  ,{
+			   "pattern" : ""
 			  , "replaceStr" : ""
 		  }
 		  ,{
-			   "pattern" : "(width\=\"[^\"]*\"|height\=\"[^\"]*\"|align\=\"[^\"]*\"|cellpadding\=\"[^\"]*\"|cellspacing\=\"[^\"]*\")" 
+			   "pattern" : ""
 			  , "replaceStr" : ""
 		  }
 		  ,{
-			   "pattern" : "style\=\"[^\"]*\s*;\s*\"" 
+			   "pattern" : ""
 			  , "replaceStr" : ""
 		  }
 		  ,{
-			   "pattern" : "style\=\"[^\"]*\"" 
-			  , "replaceStr" : ""
-		  }			  		 
-		  ,{
-			   "pattern" : "(class=\"padL5\"|class=\"input01\"|rows=\"[^\"]*\"|&nbsp;)" 
-			  , "replaceStr" : ""
-		  }
-		  ,{
-			   "pattern" : "(bordercolordark\=\"[^\"]*\"|bgcolor\=\"[^\"]*\"|border\=\"[^\"]*\"|bordercolor\=\"[^\"]*\")" 
-			  , "replaceStr" : ""
-		  }
-		  ,{
-			   "pattern" : "\<tr" 
-			  , "replaceStr" : "<tr class='aprvl-table-row' "
-		  }
-		  ,{
-			   "pattern" : "\<table" 
-			  , "replaceStr" : "<table class='aprvl-table-basic' "
-		  }
-		  ,{
-			   "pattern" : "" 
-			  , "replaceStr" : ""
-		  }
-		  ,{
-			   "pattern" : "" 
-			  , "replaceStr" : ""
-		  }
-		  ,{
-			   "pattern" : "" 
-			  , "replaceStr" : ""
-		  }		  		  		  
-		  ,{
-			   "pattern" : "" 
-			  , "replaceStr" : ""
-		  }			 		   		  
-		  ,{
-			   "pattern" : "" 
+			   "pattern" : ""
 			  , "replaceStr" : ""
 		  }	
 	];
