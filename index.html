@@ -71,10 +71,62 @@
 
 	// regex pattern array
 	var regexPattern = [
-		  'a' 
-		, 'b'
-		, 'c'
-		, '\n'
+		  {
+			   "pattern" : "(\<html\>|\<\/html\>|\<head\>|\<\/head\>|\<span\>|\</span\>)" 
+			  , "replaceStr" : ""
+		  }
+		 ,{
+			   "pattern" : "(\<body.*\>|\<meta .*\>|\<style.*\>)" 
+			  , "replaceStr" : ""
+		  }
+		  ,{
+			   "pattern" : "(width\=\"[^\"]*\"|height\=\"[^\"]*\"|align\=\"[^\"]*\"|cellpadding\=\"[^\"]*\"|cellspacing\=\"[^\"]*\")" 
+			  , "replaceStr" : ""
+		  }
+		  ,{
+			   "pattern" : "style\=\"[^\"]*\s*;\s*\"" 
+			  , "replaceStr" : ""
+		  }
+		  ,{
+			   "pattern" : "style\=\"[^\"]*\"" 
+			  , "replaceStr" : ""
+		  }			  		 
+		  ,{
+			   "pattern" : "(class=\"padL5\"|class=\"input01\"|rows=\"[^\"]*\"|&nbsp;)" 
+			  , "replaceStr" : ""
+		  }
+		  ,{
+			   "pattern" : "(bordercolordark\=\"[^\"]*\"|bgcolor\=\"[^\"]*\"|border\=\"[^\"]*\"|bordercolor\=\"[^\"]*\")" 
+			  , "replaceStr" : ""
+		  }
+		  ,{
+			   "pattern" : "\<tr" 
+			  , "replaceStr" : "<tr class='aprvl-table-row' "
+		  }
+		  ,{
+			   "pattern" : "\<table" 
+			  , "replaceStr" : "<table class='aprvl-table-basic' "
+		  }
+		  ,{
+			   "pattern" : "" 
+			  , "replaceStr" : ""
+		  }
+		  ,{
+			   "pattern" : "" 
+			  , "replaceStr" : ""
+		  }
+		  ,{
+			   "pattern" : "" 
+			  , "replaceStr" : ""
+		  }		  		  		  
+		  ,{
+			   "pattern" : "" 
+			  , "replaceStr" : ""
+		  }			 		   		  
+		  ,{
+			   "pattern" : "" 
+			  , "replaceStr" : ""
+		  }	
 	];
 	// regex pattern matcher
 	function regexReplace(originTxt){
@@ -82,8 +134,8 @@
 		let pSize = regexPattern.length;
 
 		for( let i = 0 ; i <pSize ; i++){
-			let regexP = new RegExp(regexPattern[i], 'g');
-			replacedText = replacedText.replace(regexP, '');
+			let regexP = new RegExp(regexPattern[i].pattern, 'g');
+			replacedText = replacedText.replace(regexP, regexPattern[i].replaceStr);
 		}
 
 		return replacedText;
