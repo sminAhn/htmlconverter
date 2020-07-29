@@ -124,6 +124,7 @@
 			   "pattern" : "\<table" 
 			  , "replaceStr" : "<table class=\"aprvl-table-basic\" "
 		  }
+
 		  ,{
 			   "pattern" : "&&" 
 			  , "replaceStr" : "and"
@@ -133,37 +134,66 @@
 			  , "replaceStr" : "${form_logo_qcells}"
 		  }	
 		  ,{ // 달력
-			   "pattern" : "(src\s*=\s*\").*/input_calendar\.gif\"" 
+			   "pattern" : "src\s*=\s*\".*/input_calendar.*gif\"" 
+			  , "replaceStr" : "src=\"/neo/js/ewt/ext/formEditor/images/input_calendar.gif\""
+		  }
+		  ,{ // 달력
+			   "pattern" : "src\s*=\s*\".*/input_calendar\.gif\"" 
 			  , "replaceStr" : "src=\"/neo/js/ewt/ext/formEditor/images/input_calendar.gif\""
 		  }
 		  ,{ // 사원찾기
-			   "pattern" : "(src\s*=\s*\").*/user_obj\.gif\"" 
+			   "pattern" : "src\s*=\s*\".*/user_obj\.gif\"" 
 			  , "replaceStr" : "src=\"/neo/js/ewt/ext/formEditor/images/user_obj.gif\""
 		  }	
 		  ,{ // 사원찾기
-			   "pattern" : "(src\s*=\s*\").*/user_obj.*gif\"" 
+			   "pattern" : "src\s*=\s*\".*/user_obj.*gif\"" 
 			  , "replaceStr" : "src=\"/neo/js/ewt/ext/formEditor/images/user_obj.gif\""
 		  }	
 		  ,{ // 부서찾기
-			   "pattern" : "(src\s*=\s*\").*/group_obj\.gif\"" 
+			   "pattern" : "src\s*=\s*\".*/group_obj.*gif\"" 
+			  , "replaceStr" : "src=\"/neo/js/ewt/ext/formEditor/images/group_obj.gif\""
+		  }	
+		  ,{ // 부서찾기
+			   "pattern" : "src\s*=\s*\".*/group_obj\.gif\"" 
 			  , "replaceStr" : "src=\"/neo/js/ewt/ext/formEditor/images/group_obj.gif\""
 		  }	
 		  ,{ // 사원 + 부서 찾기
-			   "pattern" : "(src\s*=\s*\").*/udt\.gif\"" 
+			   "pattern" : "src\s*=\s*\".*/udt.*gif\"" 
+			  , "replaceStr" : "src=\"/neo/js/ewt/ext/formEditor/images/udt.gif\""
+		  }	
+		  ,{ // 사원 + 부서 찾기
+			   "pattern" : "src\s*=\s*\".*/udt\.gif\"" 
 			  , "replaceStr" : "src=\"/neo/js/ewt/ext/formEditor/images/udt.gif\""
 		  }	
 		  ,{ // 관련 문서
-			   "pattern" : "(src\s*=\s*\").*/i-file-none\.gif\"" 
+			   "pattern" : "src\s*=\s*\".*/i-file-none.*gif\"" 
+			  , "replaceStr" : "src=\"/neo/js/ewt/ext/formEditor/images/i-file-none.gif\""
+		  }		
+		  ,{ // 관련 문서
+			   "pattern" : "src\s*=\s*\".*/i-file-none\.gif\"" 
 			  , "replaceStr" : "src=\"/neo/js/ewt/ext/formEditor/images/i-file-none.gif\""
 		  }		
 		  ,{ // 편집기
-			   "pattern" : "(src\s*=\s*\").*/input_html\.gif\"" 
+			   "pattern" : "src\s*=\s*\".*/input_html.*gif\"" 
+			  , "replaceStr" : "src=\"/neo/js/ewt/ext/formEditor/images/input_html.gif\"" 
+		  }		
+		  ,{ // 편집기
+			   "pattern" : "src\s*=\s*\".*/input_html\.gif\"" 
 			  , "replaceStr" : "src=\"/neo/js/ewt/ext/formEditor/images/input_html.gif\"" 
 		  }		
 		  ,{ // 조직도 팝업
-			   "pattern" : "(src\s*=\s*\").*/btn_group\.gif\"" 
+			   "pattern" : "src\s*=\s*\".*/btn_group.*gif\"" 
 			  , "replaceStr" : "src=\"/neo/img/neo/theme/btn/btn_group.gif\""
 		  }		
+		  ,{ // 조직도 팝업
+			   "pattern" : "src\s*=\s*\".*/btn_group\.gif\"" 
+			  , "replaceStr" : "src=\"/neo/img/neo/theme/btn/btn_group.gif\""
+		  }
+		  ,{ // th class 적용
+			   "pattern" : "\<td\s*(class=\"aprvl-table-data\")(.*)bgcolor=\"\S+\"(.*)" 
+			  , "replaceStr" : "\<td class=\"aprvl-table-head\" $2 $3"
+		  }		  		
+
 //		  ,{
 //			   "pattern" : "\t" 
 //			  , "replaceStr" : ""
