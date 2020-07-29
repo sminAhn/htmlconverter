@@ -72,29 +72,107 @@
 	// regex pattern array
 	var regexPattern = [
 		  {
-			   "pattern" : "(\<html\>|\<\/html\>|\<head\>|\<\/head\>|\<span\>|\</span\>)" 
+			   "pattern" : "(\<html\>|\<\/html\>|\<head\>|\<\/head\>|\<body\>|\<\/body\>)" 
 			  , "replaceStr" : ""
 		  }
-		  ,{
-			   "pattern" : "(src=\").*/image\.gif\""
-			  , "replaceStr" : "$1/image.gif\""
-		  }
-		  ,{
-			   "pattern" : ""
+		 ,{
+			   "pattern" : "\<body.*\>" 
 			  , "replaceStr" : ""
 		  }
-		  ,{
-			   "pattern" : ""
+		 ,{
+			   "pattern" : "\<meta .*\>" 
 			  , "replaceStr" : ""
 		  }
+
+//		  ,{
+//			   "pattern" : "\<style.*\>" 
+//			  , "replaceStr" : ""
+//		  }
+//		  ,{
+//			   "pattern" : "(width\=\"[^\"]*\"|height\=\"[^\"]*\"|align\=\"[^\"]*\"|cellpadding\=\"[^\"]*\"|cellspacing\=\"[^\"]*\")" 
+//			  , "replaceStr" : ""
+//		  }
+//		  ,{
+//			   "pattern" : "style\=\"[^\"]*\s*;\s*\"" 
+//			  , "replaceStr" : ""
+//		  }
+//		  ,{
+//			   "pattern" : "style\=\"[^\"]*\"" 
+//			  , "replaceStr" : ""
+//		  }
+//		  ,{
+//			   "pattern" : "rows=\"[^\"]*\"" 
+//			  , "replaceStr" : ""
+//		  }
 		  ,{
-			   "pattern" : ""
+			   "pattern" : "(class=\"padL5\"|class=\"input01\")" 
 			  , "replaceStr" : ""
 		  }
+//		  ,{
+//			   "pattern" : "(bordercolordark\=\"[^\"]*\"|bgcolor\=\"[^\"]*\"|border\=\"[^\"]*\"|bordercolor\=\"[^\"]*\")" 
+//			  , "replaceStr" : ""
+//		  }
 		  ,{
-			   "pattern" : ""
-			  , "replaceStr" : ""
+			   "pattern" : "\<tr" 
+			  , "replaceStr" : "<tr class=\"aprvl-table-row\" "
+		  }
+		  ,{
+			   "pattern" : "\<td" 
+			  , "replaceStr" : "<td class=\"aprvl-table-data\" "
+		  }		  
+		  ,{
+			   "pattern" : "\<table" 
+			  , "replaceStr" : "<table class=\"aprvl-table-basic\" "
+		  }
+		  ,{
+			   "pattern" : "&&" 
+			  , "replaceStr" : "and"
+		  }
+		  ,{
+			   "pattern" : "\<%=logo%\>" 
+			  , "replaceStr" : "${form_logo_qcells}"
 		  }	
+		  ,{ // 달력
+			   "pattern" : "(src\s*=\s*\").*/input_calendar\.gif\"" 
+			  , "replaceStr" : "src=\"/neo/js/ewt/ext/formEditor/images/input_calendar.gif\""
+		  }
+		  ,{ // 사원찾기
+			   "pattern" : "(src\s*=\s*\").*/user_obj\.gif\"" 
+			  , "replaceStr" : "src=\"/neo/js/ewt/ext/formEditor/images/user_obj.gif\""
+		  }	
+		  ,{ // 부서찾기
+			   "pattern" : "(src\s*=\s*\").*/group_obj\.gif\"" 
+			  , "replaceStr" : "src=\"/neo/js/ewt/ext/formEditor/images/group_obj.gif\""
+		  }	
+		  ,{ // 사원 + 부서 찾기
+			   "pattern" : "(src\s*=\s*\").*/udt\.gif\"" 
+			  , "replaceStr" : "src=\"/neo/js/ewt/ext/formEditor/images/udt.gif\""
+		  }	
+		  ,{ // 관련 문서
+			   "pattern" : "(src\s*=\s*\").*/i-file-none\.gif\"" 
+			  , "replaceStr" : "src=\"/neo/js/ewt/ext/formEditor/images/i-file-none.gif\""
+		  }		
+		  ,{ // 편집기
+			   "pattern" : "(src\s*=\s*\").*/input_html\.gif\"" 
+			  , "replaceStr" : "src=\"/neo/js/ewt/ext/formEditor/images/input_html.gif\"" 
+		  }		
+		  ,{ // 조직도 팝업
+			   "pattern" : "(src\s*=\s*\").*/btn_group\.gif\"" 
+			  , "replaceStr" : "src=\"/neo/img/neo/theme/btn/btn_group.gif\""
+		  }		
+//		  ,{
+//			   "pattern" : "\t" 
+//			  , "replaceStr" : ""
+//		  }
+//		  ,{
+//			   "pattern" : "  " 
+//			  , "replaceStr" : ""
+//		  }		  		  		  
+//		  ,{
+//			   "pattern" : "" 
+//			  , "replaceStr" : ""
+//		  }			 		   		  
+
 	];
 	// regex pattern matcher
 	function regexReplace(originTxt){
